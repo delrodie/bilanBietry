@@ -1,20 +1,87 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent ()}} Accueil{% endblock %}
+{% block title %}{{ parent ()}} {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-md-11 col-lg-10 col-xl-9">
+                <div class="card card0 border-0">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card00 m-2 border-0">
+                                <div class="row text-center justify-content-center px-3">
+                                    <h3 class="mt-4">BILAN DE SANTE DU CLUB</h3>
+                                </div>
+                                <div class="d-flex flex-md-row px-3 mt-4 flex-column-reverse">
+                                    <div class="col-md-6">
+                                        <div class="card1">
+                                            <ul id="progressbar" class="text-center">
+                                                <li class="active step0"></li>
+                                                <li class="active step0"></li>
+                                                <li class="active step0"></li>
+                                                <li class="active step0"></li>
+                                                <li class="active step0"></li>
+                                                <li class="active step0"></li>
+                                            </ul>
+                                            <h6 class="mb-5 active">Votre expérience au sein du club</h6>
+                                            <h6 class="mb-5 active">Actions et activités</h6>
+                                            <h6 class="mb-5">Effectif</h6>
+                                            <h6 class="mb-5">Image</h6>
+                                            <h6 class="mb-5">Gestion et fonctionnement</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card2 first-screen show ml-2">
+                                            <form action="#">
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias eligendi excepturi fuga impedit nesciunt numquam sequi! Exercitationem natus perferendis quaerat quia quibusdam, reprehenderit. Accusantium eos explicabo provident reprehenderit voluptas voluptates.
+                                                </p>
+                                                <hr>
+                                                <div class="row px-3 mt-1 mb-4">
+                                                    <div class="custom-control custom-checkbox"> <input checked id="customCheck1" type="checkbox" class="custom-control-input"> <label for="customCheck1" class="custom-control-label">I want to receive promo emails</label> </div>
+                                                </div>
+                                                <div class="row px-3 mt-1 mb-4">
+                                                    <div class="custom-control custom-checkbox"> <input checked id="customCheck2" type="checkbox" class="custom-control-input"> <label for="customCheck2" class="custom-control-label">I want to receive promo emails</label> </div>
+                                                </div>
+                                                <div class="row px-3 mt-1 mb-4">
+                                                    <div class="custom-control custom-checkbox"> <input checked id="customCheck3" type="checkbox" class="custom-control-input"> <label for="customCheck3" class="custom-control-label">I want to receive promo emails</label> </div>
+                                                </div>
+                                                <div class="row px-3 mt-1 mb-4">
+                                                    <div class="custom-control custom-checkbox"> <input checked id="customCheck4" type="checkbox" class="custom-control-input"> <label for="customCheck4" class="custom-control-label">I want to receive promo emails</label> </div>
+                                                </div>
 
-<div class="example-wrapper">
-    <h1>Base de symfony 5</h1>
-
-    <ul>
-        <li>Connexion<code><a href="{{ path('app_login') }}">Connexion</a></code></li>
-        <li> <code><a href="{{ path('app_register') }}">S'inscrire</a></code></li>
-        <li> <code><a href="{{ path('app_monitoring') }}">Log</a></code></li>
-    </ul>
-</div>
+                                                <div class="text-right">
+                                                    <button class="btn btn-secondary">Precedent</button>
+                                                    <button class="btn btn-warning">Suivant</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="card2 ml-2">
+                                            <div class="row px-3 mt-2 mb-4 text-center">
+                                                <h2 class="col-12 text-danger"><strong>Success !</strong></h2>
+                                                <div class="col-12 text-center"><img class="tick" src="https://i.imgur.com/WDI0da4.gif"></div>
+                                                <h6 class="col-12 mt-2"><i>...Enjoy COOKIES...</i></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row px-3">
+                                    <h2 class="text-muted get-bonus mt-4 mb-5">Fin Bilan de <span class="text-danger">santé</span> </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        swal("Bilan de santé", "Cochez la case lorsque vous considérez que la déclaration qui la suis est exacte. Vos reponses restent dans l'anonymat.");
+    </script>
 {% endblock %}
