@@ -19,6 +19,11 @@ class EffectifRepository extends ServiceEntityRepository
         parent::__construct($registry, Effectif::class);
     }
 
+    public function findEffectif($effectif)
+    {
+        return $this->createQueryBuilder('e')->where('e.id = :effectif')->setParameter('effectif', $effectif);
+    }
+
     // /**
     //  * @return Effectif[] Returns an array of Effectif objects
     //  */

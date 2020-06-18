@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\EffectifRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ImageRepository")
  */
-class Effectif
+class Image
 {
     /**
      * @ORM\Id()
@@ -77,39 +77,14 @@ class Effectif
     private $q12;
 
     /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $q13;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $q14;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $q15;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $q16;
-
-    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $flag;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Activite", inversedBy="effectif", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Effectif", inversedBy="image", cascade={"persist", "remove"})
      */
-    private $activite;
-
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Image", mappedBy="effectif", cascade={"persist", "remove"})
-     */
-    private $image;
+    private $effectif;
 
     public function getId(): ?int
     {
@@ -260,54 +235,6 @@ class Effectif
         return $this;
     }
 
-    public function getQ13(): ?bool
-    {
-        return $this->q13;
-    }
-
-    public function setQ13(?bool $q13): self
-    {
-        $this->q13 = $q13;
-
-        return $this;
-    }
-
-    public function getQ14(): ?bool
-    {
-        return $this->q14;
-    }
-
-    public function setQ14(?bool $q14): self
-    {
-        $this->q14 = $q14;
-
-        return $this;
-    }
-
-    public function getQ15(): ?bool
-    {
-        return $this->q15;
-    }
-
-    public function setQ15(?bool $q15): self
-    {
-        $this->q15 = $q15;
-
-        return $this;
-    }
-
-    public function getQ16(): ?bool
-    {
-        return $this->q16;
-    }
-
-    public function setQ16(?bool $q16): self
-    {
-        $this->q16 = $q16;
-
-        return $this;
-    }
-
     public function getFlag(): ?int
     {
         return $this->flag;
@@ -320,32 +247,14 @@ class Effectif
         return $this;
     }
 
-    public function getActivite(): ?Activite
+    public function getEffectif(): ?Effectif
     {
-        return $this->activite;
+        return $this->effectif;
     }
 
-    public function setActivite(?Activite $activite): self
+    public function setEffectif(?Effectif $effectif): self
     {
-        $this->activite = $activite;
-
-        return $this;
-    }
-
-    public function getImage(): ?Image
-    {
-        return $this->image;
-    }
-
-    public function setImage(?Image $image): self
-    {
-        $this->image = $image;
-
-        // set (or unset) the owning side of the relation if necessary
-        $newEffectif = null === $image ? null : $this;
-        if ($image->getEffectif() !== $newEffectif) {
-            $image->setEffectif($newEffectif);
-        }
+        $this->effectif = $effectif;
 
         return $this;
     }

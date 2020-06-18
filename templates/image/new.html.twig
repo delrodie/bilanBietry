@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Effectif{% endblock %}
+{% block title %}Image{% endblock %}
 
 {% block body %}
     <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
@@ -20,21 +20,21 @@
                                                 <li class="active step0"></li>
                                                 <li class="active step0"></li>
                                                 <li class="active step0"></li>
-                                                <li class=" step0"></li>
+                                                <li class="active step0"></li>
                                                 <li class=" step0"></li>
                                                 <li class=" step0"></li>
                                             </ul>
                                             <h6 class="mb-5 active">Votre expérience au sein du club</h6>
                                             <h6 class="mb-5 active ">Actions et activités</h6>
                                             <h6 class="mb-5 active">Effectif</h6>
-                                            <h6 class="mb-5">Image</h6>
+                                            <h6 class="mb-5 active">Image</h6>
                                             <h6 class="mb-5">Gestion et fonctionnement</h6>
                                         </div>
                                     </div>
                                     <div class="col-md-7 col-sm-12">
                                         <div class="card2 first-screen show ml-2">
 
-                                            {{ include('effectif/_form.html.twig', {'button_label': 'Suivant'}) }}
+                                            {{ include('image/_form.html.twig') }}
                                         </div>
                                     </div>
                                 </div>
@@ -46,15 +46,15 @@
         </div>
     </div>
 {% endblock %}
+
 {% block javascripts %}
     {{ parent() }}
     <script>
         swal({
-            title: "Effectif",
-            text: "Votre avis sur l'effectif compte, donc nous vous permettons de modifier les choix précedents pour les bonnes reponses",
+            title: "Bravo!",
+            text: "Nous avons besoin à présent de votre avis sur l'image",
             icon: "success",
             button: "OK",
         });
     </script>
 {% endblock %}
-

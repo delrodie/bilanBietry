@@ -6,6 +6,7 @@ use App\Entity\Effectif;
 use App\Form\EffectifType;
 use App\Repository\ActiviteRepository;
 use App\Repository\EffectifRepository;
+use App\Repository\ImageRepository;
 use App\Utilities\Utility;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,11 +20,13 @@ class EffectifController extends AbstractController
 {
     private $activiteRepository;
     private $utility;
+    private $imageRepository;
 
-    public function __construct(ActiviteRepository $activiteRepository, Utility $utility)
+    public function __construct(ActiviteRepository $activiteRepository, Utility $utility, ImageRepository $imageRepository)
     {
         $this->activiteRepository = $activiteRepository;
         $this->utility = $utility;
+        $this->imageRepository = $imageRepository;
     }
 
     /**
@@ -85,7 +88,12 @@ class EffectifController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('effectif_index');
+            // Si une activité est lée a cette experience redirigé vers edit sinon new
+            $image = $this->imageRepository->findOneBy(['effectif'=>$effectif->getId()]);
+            if ($image)
+                return $this->redirectToRoute('image_edit',['id'=> $image->getId(),'effectif' => $effectif->getId()]);
+            else
+                return $this->redirectToRoute('image_new',['effectif' => $effectif->getId()]);
         }
 
         return $this->render('effectif/edit.html.twig', [
