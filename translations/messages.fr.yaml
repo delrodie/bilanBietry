@@ -8,3 +8,19 @@ Your password should be at least {{ limit }} characters: "Votre mot de passe doi
 security:
   PleaseEnterAPassword: "Veuillez entrer votre mot de passe"
   PasswordLimitCharacters: "Votre mot de passe doit contenir au moins 6 caractères"
+
+
+experience:
+  q1 : "Je vais aux réunions régulières avec plaisir"
+  q2 : "Les programmes de nos réunions sont intéressants et variés."
+  q3 : "Dans notre club, une personne accueille les membres à leur arrivée."
+  q4 : "Nos réunions sont organisées et animées de façon professionnelle."
+  q5 : "Les membres s’assoient à une table différente chaque semaine pour discuter avec différentes personnes."
+  q6 : "Certains membres sont des amis proches."
+  q7 : "Des membres, autres que les dirigeants du club, participent aux événements du district ou au niveau international."
+  q8 : "La plupart des membres connaissent les progrès du Rotary vers l’éradication de la polio et sont fiers d’en faire partie."
+  q9 : "Nos membres donnent à la Fondation Rotary."
+  q10 : "Nos collectes de fonds sont basées sur des versements libres, sans montants minimums."
+  q11 : "Nous rendons hommage aux membres du club ou à des individus de la localité au moins une fois par mois."
+  q12 : "Grâce au Rotary, j’ai tissé des liens avec d’autres membres à l’étranger."
+  q13 : "Pour enrichir l’expérience des membres, notre club teste régulièrement de nouvelles choses: activités, formats de réunion, etc…"

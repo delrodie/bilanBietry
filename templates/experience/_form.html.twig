@@ -1,0 +1,97 @@
+{{ form_start(form) }}
+    <p class="text-justify"><strong>Votre expérience au sein du club</strong></p>
+    <p class="text-justify">
+        Les membres qui apprécient la vie deleur club y resteront plus volontiers etleur enthousiasme aura tendance à
+        déteindre sur les autres. si telle estla situation dans votre club, c'estque vous êtes sur labonne voie. Par
+        "expérience", on entend les réunions régulières et les activités, mais aussi les liens tissés au club et la
+        fierté que vous tirez del'oeuvre du Rotary à laquelle vous contribuez.
+
+    </p>
+    <hr>
+    <p class="text-center text-danger" style="font-size: 0.9rem; font-weight:bold; font-style:italic;">
+        (Cochez la case lorsque vous considérez que la déclaration qui la suis est exacte.)
+    </p>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q1) }}
+            {{ form_label(form.q1, 'experience.q1'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q2) }}
+            {{ form_label(form.q2, 'experience.q2'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q3) }}
+            {{ form_label(form.q3, 'experience.q3'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q4) }}
+            {{ form_label(form.q4, 'experience.q4'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q5) }}
+            {{ form_label(form.q5, 'experience.q5'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q6) }}
+            {{ form_label(form.q6, 'experience.q6'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q7) }}
+            {{ form_label(form.q7, 'experience.q7'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q8) }}
+            {{ form_label(form.q8, 'experience.q8'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q9) }}
+            {{ form_label(form.q9, 'experience.q9'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q10) }}
+            {{ form_label(form.q10, 'experience.q10'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q11) }}
+            {{ form_label(form.q11, 'experience.q11'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q12) }}
+            {{ form_label(form.q12, 'experience.q12'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q13) }}
+            {{ form_label(form.q13, 'experience.q13'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    {{ form_widget(form) }}
+
+    <div class="text-right mb-5 mt-3">
+        <button class="btn btn-warning">{{ button_label|default('Suivant') }}</button>
+    </div>
+{{ form_end(form) }}

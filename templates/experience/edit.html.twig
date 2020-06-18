@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre expérience au sein du club{% endblock %}
+
+{% block body %}
+    <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-md-11 col-lg-10 col-xl-9">
+                <div class="card card0 border-0">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card00 m-2 border-0">
+                                <div class="row text-center justify-content-center px-3">
+                                    <h3 class="mt-4">BILAN DE SANTE DU CLUB</h3>
+                                </div>
+                                <div class="d-flex flex-md-row px-3 mt-4 flex-column-reverse">
+                                    <div class="col-md-5 col-sm-12">
+                                        <div class="card1">
+                                            <ul id="progressbar" class="text-center">
+                                                <li class="active step0"></li>
+                                                <li class=" step0"></li>
+                                                <li class=" step0"></li>
+                                                <li class=" step0"></li>
+                                                <li class=" step0"></li>
+                                                <li class=" step0"></li>
+                                            </ul>
+                                            <h6 class="mb-5 active">Votre expérience au sein du club</h6>
+                                            <h6 class="mb-5 ">Actions et activités</h6>
+                                            <h6 class="mb-5">Effectif</h6>
+                                            <h6 class="mb-5">Image</h6>
+                                            <h6 class="mb-5">Gestion et fonctionnement</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-sm-12">
+                                        <div class="card2 first-screen show ml-2">
+
+                                            {{ include('experience/_form.html.twig', {'button_label': 'Suivant'}) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

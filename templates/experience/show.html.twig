@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Experience{% endblock %}
+
+{% block body %}
+    <h1>Experience</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ experience.id }}</td>
+            </tr>
+            <tr>
+                <th>Q1</th>
+                <td>{{ experience.q1 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q2</th>
+                <td>{{ experience.q2 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q3</th>
+                <td>{{ experience.q3 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q4</th>
+                <td>{{ experience.q4 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q5</th>
+                <td>{{ experience.q5 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q6</th>
+                <td>{{ experience.q6 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q7</th>
+                <td>{{ experience.q7 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q8</th>
+                <td>{{ experience.q8 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q9</th>
+                <td>{{ experience.q9 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q10</th>
+                <td>{{ experience.q10 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q11</th>
+                <td>{{ experience.q11 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q12</th>
+                <td>{{ experience.q12 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q13</th>
+                <td>{{ experience.q13 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Flag</th>
+                <td>{{ experience.flag }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('experience_index') }}">back to list</a>
+
+    <a href="{{ path('experience_edit', {'id': experience.id}) }}">edit</a>
+
+    {{ include('experience/_delete_form.html.twig') }}
+{% endblock %}
