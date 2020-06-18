@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Votre expérience au sein du club{% endblock %}
+{% block title %}Actions et activités{% endblock %}
 
 {% block body %}
     <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
@@ -18,14 +18,14 @@
                                         <div class="card1">
                                             <ul id="progressbar" class="text-center">
                                                 <li class="active step0"></li>
-                                                <li class=" step0"></li>
+                                                <li class="active step0"></li>
                                                 <li class=" step0"></li>
                                                 <li class=" step0"></li>
                                                 <li class=" step0"></li>
                                                 <li class=" step0"></li>
                                             </ul>
                                             <h6 class="mb-5 active">Votre expérience au sein du club</h6>
-                                            <h6 class="mb-5 ">Actions et activités</h6>
+                                            <h6 class="mb-5 active ">Actions et activités</h6>
                                             <h6 class="mb-5">Effectif</h6>
                                             <h6 class="mb-5">Image</h6>
                                             <h6 class="mb-5">Gestion et fonctionnement</h6>
@@ -34,7 +34,7 @@
                                     <div class="col-md-7 col-sm-12">
                                         <div class="card2 first-screen show ml-2">
 
-                                            {{ include('experience/_form.html.twig') }}
+                                            {{ include('activite/_form.html.twig') }}
                                         </div>
                                     </div>
                                 </div>
@@ -49,9 +49,11 @@
 {% block javascripts %}
     {{ parent() }}
     <script>
-        swal(
-            "Bilan de santé",
-            "Cochez la case lorsque vous considérez que la déclaration qui la suis est exacte. Vos reponses restent dans l'anonymat."
-        );
+        swal({
+            title: "Bravo!",
+            text: "Nous avons besoin à présent de votre avis sur les actions et activités",
+            icon: "success",
+            button: "OK",
+        });
     </script>
 {% endblock %}

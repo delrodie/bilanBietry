@@ -19,6 +19,15 @@ class ExperienceRepository extends ServiceEntityRepository
         parent::__construct($registry, Experience::class);
     }
 
+    /**
+     * @param $experience
+     * @return \Doctrine\ORM\QueryBuilder
+     */
+    public function findExperience($experience)
+    {
+        return $this->createQueryBuilder('e')->where('e.id = :experience')->setParameter('experience', $experience);
+    }
+
     // /**
     //  * @return Experience[] Returns an array of Experience objects
     //  */

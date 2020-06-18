@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Activite{% endblock %}
+
+{% block body %}
+    <h1>Activite</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ activite.id }}</td>
+            </tr>
+            <tr>
+                <th>Q1</th>
+                <td>{{ activite.q1 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q2</th>
+                <td>{{ activite.q2 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q3</th>
+                <td>{{ activite.q3 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q4</th>
+                <td>{{ activite.q4 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q5</th>
+                <td>{{ activite.q5 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q6</th>
+                <td>{{ activite.q6 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q7</th>
+                <td>{{ activite.q7 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q8</th>
+                <td>{{ activite.q8 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q9</th>
+                <td>{{ activite.q9 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q10</th>
+                <td>{{ activite.q10 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q11</th>
+                <td>{{ activite.q11 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Flag</th>
+                <td>{{ activite.flag }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('activite_index') }}">back to list</a>
+
+    <a href="{{ path('activite_edit', {'id': activite.id}) }}">edit</a>
+
+    {{ include('activite/_delete_form.html.twig') }}
+{% endblock %}

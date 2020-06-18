@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Activite index{% endblock %}
+
+{% block body %}
+    <h1>Activite index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Q1</th>
+                <th>Q2</th>
+                <th>Q3</th>
+                <th>Q4</th>
+                <th>Q5</th>
+                <th>Q6</th>
+                <th>Q7</th>
+                <th>Q8</th>
+                <th>Q9</th>
+                <th>Q10</th>
+                <th>Q11</th>
+                <th>Flag</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for activite in activites %}
+            <tr>
+                <td>{{ activite.id }}</td>
+                <td>{{ activite.q1 ? 'Yes' : 'No' }}</td>
+                <td>{{ activite.q2 ? 'Yes' : 'No' }}</td>
+                <td>{{ activite.q3 ? 'Yes' : 'No' }}</td>
+                <td>{{ activite.q4 ? 'Yes' : 'No' }}</td>
+                <td>{{ activite.q5 ? 'Yes' : 'No' }}</td>
+                <td>{{ activite.q6 ? 'Yes' : 'No' }}</td>
+                <td>{{ activite.q7 ? 'Yes' : 'No' }}</td>
+                <td>{{ activite.q8 ? 'Yes' : 'No' }}</td>
+                <td>{{ activite.q9 ? 'Yes' : 'No' }}</td>
+                <td>{{ activite.q10 ? 'Yes' : 'No' }}</td>
+                <td>{{ activite.q11 ? 'Yes' : 'No' }}</td>
+                <td>{{ activite.flag }}</td>
+                <td>
+                    <a href="{{ path('activite_show', {'id': activite.id}) }}">show</a>
+                    <a href="{{ path('activite_edit', {'id': activite.id, 'experience': activite.experience.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

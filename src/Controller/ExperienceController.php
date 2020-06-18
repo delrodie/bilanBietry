@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Experience;
 use App\Form\ExperienceType;
+use App\Repository\ActiviteRepository;
 use App\Repository\ExperienceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,6 +16,13 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ExperienceController extends AbstractController
 {
+    private $activiteReposiroty;
+
+    public function __construct(ActiviteRepository $activiteRepository)
+    {
+        $this->activiteReposiroty = $activiteRepository;
+    }
+
     /**
      * @Route("/", name="experience_index", methods={"GET"})
      */
@@ -69,7 +77,13 @@ class ExperienceController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('experience_index');
+            // Si une activité est lée a cette experience redirigé vers edit sinon new
+            $activite = $this->activiteReposiroty->findOneBy(['experience'=>$experience->getId()]);
+            if ($activite)
+                return $this->redirectToRoute('activite_edit',['id'=> $activite->getId(),'experience' => $experience->getId()]);
+            else
+                return $this->redirectToRoute('activite_new',['experience' => $experience->getId()]);
+
         }
 
         return $this->render('experience/edit.html.twig', [
