@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fonctionnement index{% endblock %}
+
+{% block body %}
+    <h1>Fonctionnement index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Q1</th>
+                <th>Q2</th>
+                <th>Q3</th>
+                <th>Q4</th>
+                <th>Q5</th>
+                <th>Q6</th>
+                <th>Q7</th>
+                <th>Q8</th>
+                <th>Q9</th>
+                <th>Q10</th>
+                <th>Q11</th>
+                <th>Q12</th>
+                <th>Q13</th>
+                <th>Q14</th>
+                <th>CreatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fonctionnement in fonctionnements %}
+            <tr>
+                <td>{{ fonctionnement.id }}</td>
+                <td>{{ fonctionnement.q1 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q2 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q3 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q4 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q5 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q6 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q7 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q8 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q9 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q10 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q11 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q12 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q13 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.q14 ? 'Yes' : 'No' }}</td>
+                <td>{{ fonctionnement.createdAt ? fonctionnement.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('fonctionnement_show', {'id': fonctionnement.id}) }}">show</a>
+                    <a href="{{ path('fonctionnement_edit', {'id': fonctionnement.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="17">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('fonctionnement_new') }}">Create new</a>
+{% endblock %}

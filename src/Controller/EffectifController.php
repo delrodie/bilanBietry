@@ -56,7 +56,7 @@ class EffectifController extends AbstractController
             // MAJ du flag
             $this->utility->addFlag($activite, 2);
 
-            return $this->redirectToRoute('effectif_index');
+            return $this->redirectToRoute('image_new',['effectif' => $effectif->getId()]);
         }
 
 

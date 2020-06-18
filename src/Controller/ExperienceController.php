@@ -47,7 +47,7 @@ class ExperienceController extends AbstractController
             $entityManager->persist($experience);
             $entityManager->flush();
 
-            return $this->redirectToRoute('experience_index');
+            return $this->redirectToRoute('activite_new',['experience' => $experience->getId()]);
         }
 
         return $this->render('experience/new.html.twig', [

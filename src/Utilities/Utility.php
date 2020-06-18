@@ -38,11 +38,17 @@ class Utility
     {
         // Si le flag est 4 alors mise a jour des différentes tables sinon la table experience
         if ($flag === 4){
-            $experience = $this->experienceRepository->findOneBy(['id'=>$id]);
+            $image = $this->imageRepository->findOneBy(['id'=>$id]);
+            $effectif = $this->effectifRepository->findOneBy(['id'=>$image->getEffectif()->getId()]);
+            $activite = $this->activiteRepository->findOneBy(['id'=>$effectif->getActivite()->getId()]);
+            $experience = $this->experienceRepository->findOneBy(['id'=>$activite->getExperience()->getId()]);
             $experience->setFlag($flag);
+            $activite->setFlag(3);
+            $effectif->setFlag(2);
+            $image->setFlag(1);
         }elseif ($flag === 3){
             $effectif = $this->effectifRepository->findOneBy(['id'=>$id]);
-            $activite = $this->activiteRepository->findOneBy(['id'=>$effectif->getId()]);
+            $activite = $this->activiteRepository->findOneBy(['id'=>$effectif->getActivite()->getId()]);
             $experience = $this->experienceRepository->findOneBy(['id'=>$activite->getExperience()->getId()]);
             $experience->setFlag($flag);
             $activite->setFlag(2);

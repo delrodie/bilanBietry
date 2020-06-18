@@ -28,6 +28,14 @@ class AccueilController extends AbstractController
     }
 
     /**
+     * @Route("/bilan/fin", name="bilan_fin")
+     */
+    public function bilan()
+    {
+        return $this->render("accueil/index.html.twig");
+    }
+
+    /**
      * @Route("/dashboard", name="app_dashboard")
      */
     public function dashboard(Request $request)

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Image;
 use App\Form\ImageType;
 use App\Repository\EffectifRepository;
+use App\Repository\FonctionnementRepository;
 use App\Repository\ImageRepository;
 use App\Utilities\Utility;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,11 +20,13 @@ class ImageController extends AbstractController
 {
     private $effectifRepositif;
     private $utility;
+    private $fonctionnementRepository;
 
-    public function __construct(EffectifRepository $effectifRepository, Utility $utility)
+    public function __construct(EffectifRepository $effectifRepository, Utility $utility, FonctionnementRepository $fonctionnementRepository)
     {
         $this->effectifRepositif = $effectifRepository;
         $this->utility = $utility;
+        $this->fonctionnementRepository = $fonctionnementRepository;
     }
 
     /**
@@ -52,7 +55,7 @@ class ImageController extends AbstractController
 
             $this->utility->addFlag($effectif, 3);
 
-            return $this->redirectToRoute('image_index');
+            return $this->redirectToRoute('fonctionnement_new',['image'=>$image->getId()]);
         }
 
         return $this->render('image/new.html.twig', [
@@ -83,7 +86,12 @@ class ImageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('image_index');
+            // Si une activité est lée a cette experience redirigé vers edit sinon new
+            $fonctionnement = $this->fonctionnementRepository->findOneBy(['image'=>$image->getId()]);
+            if ($fonctionnement)
+                return $this->redirectToRoute('fonctionnement_edit',['id'=> $fonctionnement->getId(),'image' => $image->getId()]);
+            else
+                return $this->redirectToRoute('fonctionnement_new',['image' => $image->getId()]);
         }
 
         return $this->render('image/edit.html.twig', [

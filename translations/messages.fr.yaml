@@ -77,3 +77,22 @@ image:
   q10 : "L’existence de notre club est connue dans la commune"
   q11 : "Nous avons une brochure que nous donnons aux habitants et aux prospects. "
   q12 : "Nous utilisons Rotary Showcase pour promouvoir la réalisation de nos actions."
+
+fonctionnement:
+  q1 : "Notre club s’est doté d’un plan stratégique qui est régulièrement mis à jour"
+  q2 : "Nous fixons des objectifs annuels que nous entrons dans Rotary Club Central."
+  q3 : "Notre club comprend plusieurs commissions qui soutiennent nos activités et informent régulièrement le
+        comité sur la progression vers ces objectifs."
+  q4 : "Notre comité modifie ce qui ne fonctionne pas et adapte son règlement intérieur en conséquence."
+  q5 : "Nous avons mis en place un processus pour assurer la continuité : préparation des membres à des mandats,
+        archivage des procédures et participation des dirigeants en exercice, anciens et futurs aux décisions."
+  q6 : "Notre président assiste au SFPE et les dirigeants du club participent à l’assemblée de district."
+  q7 : "Les membres assistent aux événements et séminaires du district sur les sujets rotariens qui les intéressent."
+  q8 : "Les nouveaux membres sont accueillis de façon formelle et ils reçoivent tous les documents adaptés."
+  q9 : "Au moins la moitié des membres ont un compte sur Mon Rotary"
+  q10 : "Les dirigeants du club utilisent Mon Rotary ou un logiciel dédié pour gérer le club."
+  q11 : "Notre club fixe et approuve un budget pour l’année rotarienne à venir, nomme un trésorier et a des
+         comptes bancaires distincts pour la gestion et la collecte de fonds (ou le financement des actions)."
+  q12 : "Notre club atteint ses objectifs de collectes de fonds au moyen de diverses activités."
+  q13 : "Chaque année, nous demandons aux membres de remplir une enquête de satisfaction."
+  q14 : "Nous proposons des possibilités de formation continue à nos membres."

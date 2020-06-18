@@ -1,0 +1,105 @@
+{{ form_start(form) }}
+<p class="text-justify"><strong>Gestion et fonctionnement</strong></p>
+<p class="text-justify">
+    La bonne gestion d’un club est souvent à mettre au crédit de ses dirigeants qui ont à cœur de préserver son avenir. Parce
+    que ces Rotariens marquent le club de leur empreinte, il est capital qu’ils soient compétents. Le développement des
+    qualités de leader est un autre moyen de le rendre plus fort.
+
+</p>
+<hr>
+<p class="text-center text-danger" style="font-size: 0.9rem; font-weight:bold; font-style:italic;">
+    (Cochez la case lorsque vous considérez que la déclaration qui la suis est exacte.)
+</p>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q1) }}
+        {{ form_label(form.q1, 'fonctionnement.q1'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q2) }}
+        {{ form_label(form.q2, 'fonctionnement.q2'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q3) }}
+        {{ form_label(form.q3, 'fonctionnement.q3'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q4) }}
+        {{ form_label(form.q4, 'fonctionnement.q4'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q5) }}
+        {{ form_label(form.q5, 'fonctionnement.q5'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q6) }}
+        {{ form_label(form.q6, 'fonctionnement.q6'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q7) }}
+        {{ form_label(form.q7, 'fonctionnement.q7'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q8) }}
+        {{ form_label(form.q8, 'fonctionnement.q8'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q9) }}
+        {{ form_label(form.q9, 'fonctionnement.q9'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q10) }}
+        {{ form_label(form.q10, 'fonctionnement.q10'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q11) }}
+        {{ form_label(form.q11, 'fonctionnement.q11'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q12) }}
+        {{ form_label(form.q12, 'fonctionnement.q12'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q13) }}
+        {{ form_label(form.q13, 'fonctionnement.q13'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="row px-3 mt-1 mb-4">
+    <div class="custom-control custom-checkbox">
+        {{ form_widget(form.q14) }}
+        {{ form_label(form.q14, 'fonctionnement.q14'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+    </div>
+</div>
+<div class="d-none">
+    {{ form_row(form.image) }}
+</div>
+{{ form_widget(form) }}
+<div class="text-right mb-5 mt-3">
+    <a href="{{ path('image_edit', {'id': image.id, 'effectif':image.effectif.id}) }}" class="btn btn-secondary">Precedent</a>
+    <button class="btn btn-warning">{{ button_label|default('Envoyer') }}</button>
+</div>
+{{ form_end(form) }}

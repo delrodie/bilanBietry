@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ImageRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\FonctionnementRepository")
  */
-class Image
+class Fonctionnement
 {
     /**
      * @ORM\Id()
@@ -77,19 +77,29 @@ class Image
     private $q12;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="boolean", nullable=true)
      */
-    private $flag;
+    private $q13;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Effectif", inversedBy="image", cascade={"persist", "remove"})
+     * @ORM\Column(type="boolean", nullable=true)
      */
-    private $effectif;
+    private $q14;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Fonctionnement", mappedBy="image", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Image", inversedBy="fonctionnement", cascade={"persist", "remove"})
      */
-    private $fonctionnement;
+    private $image;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $createdAt;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -240,44 +250,50 @@ class Image
         return $this;
     }
 
-    public function getFlag(): ?int
+    public function getQ13(): ?bool
     {
-        return $this->flag;
+        return $this->q13;
     }
 
-    public function setFlag(?int $flag): self
+    public function setQ13(?bool $q13): self
     {
-        $this->flag = $flag;
+        $this->q13 = $q13;
 
         return $this;
     }
 
-    public function getEffectif(): ?Effectif
+    public function getQ14(): ?bool
     {
-        return $this->effectif;
+        return $this->q14;
     }
 
-    public function setEffectif(?Effectif $effectif): self
+    public function setQ14(?bool $q14): self
     {
-        $this->effectif = $effectif;
+        $this->q14 = $q14;
 
         return $this;
     }
 
-    public function getFonctionnement(): ?Fonctionnement
+    public function getImage(): ?Image
     {
-        return $this->fonctionnement;
+        return $this->image;
     }
 
-    public function setFonctionnement(?Fonctionnement $fonctionnement): self
+    public function setImage(?Image $image): self
     {
-        $this->fonctionnement = $fonctionnement;
+        $this->image = $image;
 
-        // set (or unset) the owning side of the relation if necessary
-        $newImage = null === $fonctionnement ? null : $this;
-        if ($fonctionnement->getImage() !== $newImage) {
-            $fonctionnement->setImage($newImage);
-        }
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(?\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

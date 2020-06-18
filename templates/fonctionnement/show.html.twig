@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fonctionnement{% endblock %}
+
+{% block body %}
+    <h1>Fonctionnement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ fonctionnement.id }}</td>
+            </tr>
+            <tr>
+                <th>Q1</th>
+                <td>{{ fonctionnement.q1 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q2</th>
+                <td>{{ fonctionnement.q2 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q3</th>
+                <td>{{ fonctionnement.q3 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q4</th>
+                <td>{{ fonctionnement.q4 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q5</th>
+                <td>{{ fonctionnement.q5 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q6</th>
+                <td>{{ fonctionnement.q6 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q7</th>
+                <td>{{ fonctionnement.q7 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q8</th>
+                <td>{{ fonctionnement.q8 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q9</th>
+                <td>{{ fonctionnement.q9 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q10</th>
+                <td>{{ fonctionnement.q10 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q11</th>
+                <td>{{ fonctionnement.q11 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q12</th>
+                <td>{{ fonctionnement.q12 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q13</th>
+                <td>{{ fonctionnement.q13 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q14</th>
+                <td>{{ fonctionnement.q14 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ fonctionnement.createdAt ? fonctionnement.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('fonctionnement_index') }}">back to list</a>
+
+    <a href="{{ path('fonctionnement_edit', {'id': fonctionnement.id}) }}">edit</a>
+
+    {{ include('fonctionnement/_delete_form.html.twig') }}
+{% endblock %}
