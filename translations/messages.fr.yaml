@@ -41,3 +41,23 @@ activite:
   q9 : "Tous les membres peuvent donner leur avis sur les actions et les activités."
   q10 : "Nos actions locales sont alignées sur les axes stratégiques et les domaines d’action du Rotary."
   q11 : "Notre club a demandé ou utilisé une subvention de la Fondation pour l’une de ses actions."
+
+effectif:
+  q1 : "L’effectif de notre club affiche une augmentation nette cette année "
+  q2 : "L’effectif féminin de notre club affiche une augmentation nette cette année."
+  q3 : "Le nombre des membres de moins de 40 ans affiche une augmentation nette cette année."
+  q4 : "Notre club cherche à recruter des membres dont la profession est sous-représentée."
+  q5 : "Notre club entretient des liens avec les Anciens du Rotary (anciens Rotaractiens, participants au Youth
+        Exchange, étudiants des Centres du Rotary pour la paix et participants à d’autres programmes du Rotary)."
+  q6 : "Notre club recrute activement parmi les Anciens du Rotary."
+  q7 : "Notre club recrute activement parmi les jeunes retraités."
+  q8 : "Notre club fidélise au moins 90 % de ses membres chaque année."
+  q9 : "Au moins 75 % de nos clubs participent activement à une action ou assument une fonction de dirigeant
+        ou autre."
+  q10 : "Notre club a mis en place un processus pour sonder les membres."
+  q11 : "Une personne a été désignée pour vérifier les pistes de prospect envoyées au club."
+  q12 : "Le club demande toujours aux invités de se présenter, et il les réinvite régulièrement."
+  q13 : "Les avantages de l’adhésion sont expliqués et communiqués à tous les membres"
+  q14 : "Les nouveaux membres suivent une orientation et se voient proposer diverses possibilités de s’impliquer. "
+  q15 : "Le club associe des membres novices et expérimentés pour instaurer des liens de mentorat."
+  q16 : "Nous demandons aux membres de parler de leur profession ou d’autres sujets d’intérêt lors des réunions."

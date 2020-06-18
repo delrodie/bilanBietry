@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ActiviteRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\EffectifRepository")
  */
-class Activite
+class Effectif
 {
     /**
      * @ORM\Id()
@@ -72,19 +72,39 @@ class Activite
     private $q11;
 
     /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $q12;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $q13;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $q14;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $q15;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $q16;
+
+    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $flag;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Experience", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Activite", inversedBy="effectif", cascade={"persist", "remove"})
      */
-    private $experience;
-
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Effectif", mappedBy="activite", cascade={"persist", "remove"})
-     */
-    private $effectif;
+    private $activite;
 
     public function getId(): ?int
     {
@@ -223,6 +243,66 @@ class Activite
         return $this;
     }
 
+    public function getQ12(): ?bool
+    {
+        return $this->q12;
+    }
+
+    public function setQ12(?bool $q12): self
+    {
+        $this->q12 = $q12;
+
+        return $this;
+    }
+
+    public function getQ13(): ?bool
+    {
+        return $this->q13;
+    }
+
+    public function setQ13(?bool $q13): self
+    {
+        $this->q13 = $q13;
+
+        return $this;
+    }
+
+    public function getQ14(): ?bool
+    {
+        return $this->q14;
+    }
+
+    public function setQ14(?bool $q14): self
+    {
+        $this->q14 = $q14;
+
+        return $this;
+    }
+
+    public function getQ15(): ?bool
+    {
+        return $this->q15;
+    }
+
+    public function setQ15(?bool $q15): self
+    {
+        $this->q15 = $q15;
+
+        return $this;
+    }
+
+    public function getQ16(): ?bool
+    {
+        return $this->q16;
+    }
+
+    public function setQ16(?bool $q16): self
+    {
+        $this->q16 = $q16;
+
+        return $this;
+    }
+
     public function getFlag(): ?int
     {
         return $this->flag;
@@ -235,32 +315,14 @@ class Activite
         return $this;
     }
 
-    public function getExperience(): ?Experience
+    public function getActivite(): ?Activite
     {
-        return $this->experience;
+        return $this->activite;
     }
 
-    public function setExperience(?Experience $experience): self
+    public function setActivite(?Activite $activite): self
     {
-        $this->experience = $experience;
-
-        return $this;
-    }
-
-    public function getEffectif(): ?Effectif
-    {
-        return $this->effectif;
-    }
-
-    public function setEffectif(?Effectif $effectif): self
-    {
-        $this->effectif = $effectif;
-
-        // set (or unset) the owning side of the relation if necessary
-        $newActivite = null === $effectif ? null : $this;
-        if ($effectif->getActivite() !== $newActivite) {
-            $effectif->setActivite($newActivite);
-        }
+        $this->activite = $activite;
 
         return $this;
     }

@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Effectif index{% endblock %}
+
+{% block body %}
+    <h1>Effectif index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Q1</th>
+                <th>Q2</th>
+                <th>Q3</th>
+                <th>Q4</th>
+                <th>Q5</th>
+                <th>Q6</th>
+                <th>Q7</th>
+                <th>Q8</th>
+                <th>Q9</th>
+                <th>Q10</th>
+                <th>Q11</th>
+                <th>Q12</th>
+                <th>Q13</th>
+                <th>Q14</th>
+                <th>Q15</th>
+                <th>Q16</th>
+                <th>Flag</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for effectif in effectifs %}
+            <tr>
+                <td>{{ effectif.id }}</td>
+                <td>{{ effectif.q1 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q2 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q3 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q4 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q5 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q6 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q7 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q8 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q9 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q10 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q11 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q12 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q13 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q14 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q15 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.q16 ? 'Yes' : 'No' }}</td>
+                <td>{{ effectif.flag }}</td>
+                <td>
+                    <a href="{{ path('effectif_show', {'id': effectif.id}) }}">show</a>
+                    <a href="{{ path('effectif_edit', {'id': effectif.id, 'activite': effectif.activite.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="19">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

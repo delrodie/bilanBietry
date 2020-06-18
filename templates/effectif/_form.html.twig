@@ -1,0 +1,120 @@
+{{ form_start(form) }}
+    <p class="text-justify"><strong>Effectif</strong></p>
+    <p class="text-justify">
+        Un club dynamique est en croissance constante. La diversité des points de vue et des parcours parmi les membres est
+        un facteur de dynamisme et d’innovation, qui favorise également la compréhension des problématiques locales. Dans
+        ce contexte, il est donc important de prêter attention à ce qu’ils ressentent. Plusieurs études ont montré que les raisons
+        les plus fréquentes des départs sont le manque d’ouverture des dirigeants de club à d’autres idées ou façons de faire.
+        Impliquer les membres et leur offrir l’occasion de s’exprimer quant à l’avenir de leur club renforce l’engagement du club et
+        de ses membres vis-à-vis du Rotary.
+
+    </p>
+    <hr>
+    <p class="text-center text-danger" style="font-size: 0.9rem; font-weight:bold; font-style:italic;">
+        (Cochez la case lorsque vous considérez que la déclaration qui la suis est exacte.)
+    </p>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q1) }}
+            {{ form_label(form.q1, 'effectif.q1'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q2) }}
+            {{ form_label(form.q2, 'effectif.q2'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q3) }}
+            {{ form_label(form.q3, 'effectif.q3'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q4) }}
+            {{ form_label(form.q4, 'effectif.q4'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q5) }}
+            {{ form_label(form.q5, 'effectif.q5'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q6) }}
+            {{ form_label(form.q6, 'effectif.q6'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q7) }}
+            {{ form_label(form.q7, 'effectif.q7'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q8) }}
+            {{ form_label(form.q8, 'effectif.q8'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q9) }}
+            {{ form_label(form.q9, 'effectif.q9'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q10) }}
+            {{ form_label(form.q10, 'effectif.q10'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q11) }}
+            {{ form_label(form.q11, 'effectif.q11'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q12) }}
+            {{ form_label(form.q12, 'effectif.q12'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q13) }}
+            {{ form_label(form.q13, 'effectif.q13'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q14) }}
+            {{ form_label(form.q14, 'effectif.q14'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q15) }}
+            {{ form_label(form.q15, 'effectif.q15'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="row px-3 mt-1 mb-4">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.q16) }}
+            {{ form_label(form.q16, 'effectif.q16'|trans, {'label_attr':{'class':'custom-control-label'}}) }}
+        </div>
+    </div>
+    <div class="d-none">
+        {{ form_row(form.activite) }}
+    </div>
+    {{ form_widget(form) }}
+    <div class="text-right mb-5 mt-3">
+        <a href="{{ path('activite_edit', {'id': activite.id, 'experience':activite.experience.id}) }}" class="btn btn-secondary">Precedent</a>
+        <button class="btn btn-warning">{{ button_label|default('Suivant') }}</button>
+    </div>
+{{ form_end(form) }}

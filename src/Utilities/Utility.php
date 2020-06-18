@@ -4,6 +4,7 @@
 namespace App\Utilities;
 
 
+use App\Repository\ActiviteRepository;
 use App\Repository\ExperienceRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -11,11 +12,13 @@ class Utility
 {
     private $experienceRepository;
     private $em;
+    private $activiteRepository;
 
-    public function __construct(ExperienceRepository $experienceRepository, EntityManagerInterface $em)
+    public function __construct(ExperienceRepository $experienceRepository, EntityManagerInterface $em, ActiviteRepository $activiteRepository)
     {
         $this->experienceRepository = $experienceRepository;
         $this->em = $em;
+        $this->activiteRepository = $activiteRepository;
     }
 
     /**
@@ -35,8 +38,10 @@ class Utility
             $experience = $this->experienceRepository->findOneBy(['id'=>$id]);
             $experience->setFlag($flag);
         }elseif ($flag === 2){
-            $experience = $this->experienceRepository->findOneBy(['id'=>$id]);
+            $activite = $this->activiteRepository->findOneBy(['id'=>$id]);
+            $experience = $this->experienceRepository->findOneBy(['id'=>$activite->getExperience()->getId()]);
             $experience->setFlag($flag);
+            $activite->setFlag(1);
         }elseif ($flag === 1){
             $experience = $this->experienceRepository->findOneBy(['id'=>$id]);
             $experience->setFlag($flag);

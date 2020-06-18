@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Activite;
 use App\Form\ActiviteType;
 use App\Repository\ActiviteRepository;
+use App\Repository\EffectifRepository;
 use App\Utilities\Utility;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,10 +18,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class ActiviteController extends AbstractController
 {
     private $utility;
+    private $effectifRepository;
 
-    public function __construct(Utility $utility)
+    public function __construct(Utility $utility, EffectifRepository $effectifRepository)
     {
         $this->utility = $utility;
+        $this->effectifRepository = $effectifRepository;
     }
 
     /**
@@ -50,7 +53,7 @@ class ActiviteController extends AbstractController
             // Mise a jour du flag
             $this->utility->addFlag($activite->getExperience()->getId(), 1);
 
-            return $this->redirectToRoute('activite_index');
+            return $this->redirectToRoute('effectif_new',['activite'=>$activite->getId()]);
         }
 
         return $this->render('activite/new.html.twig', [
@@ -75,13 +78,19 @@ class ActiviteController extends AbstractController
      */
     public function edit(Request $request, Activite $activite, $experience): Response
     {
-        $form = $this->createForm(ActiviteType::class, $activite);
+        $form = $this->createForm(ActiviteType::class, $activite, ['experience' => $experience]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('activite_index');
+            // Si une activité est lée a cette experience redirigé vers edit sinon new
+            $effectif = $this->effectifRepository->findOneBy(['activite'=>$activite->getId()]);
+            if ($effectif)
+                return $this->redirectToRoute('effectif_edit',['id'=> $effectif->getId(),'activite' => $activite->getId()]);
+            else
+                return $this->redirectToRoute('effectif_new',['activite' => $activite->getId()]);
+
         }
 
         return $this->render('activite/edit.html.twig', [

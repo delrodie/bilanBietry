@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Effectif{% endblock %}
+
+{% block body %}
+    <h1>Effectif</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ effectif.id }}</td>
+            </tr>
+            <tr>
+                <th>Q1</th>
+                <td>{{ effectif.q1 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q2</th>
+                <td>{{ effectif.q2 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q3</th>
+                <td>{{ effectif.q3 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q4</th>
+                <td>{{ effectif.q4 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q5</th>
+                <td>{{ effectif.q5 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q6</th>
+                <td>{{ effectif.q6 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q7</th>
+                <td>{{ effectif.q7 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q8</th>
+                <td>{{ effectif.q8 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q9</th>
+                <td>{{ effectif.q9 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q10</th>
+                <td>{{ effectif.q10 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q11</th>
+                <td>{{ effectif.q11 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q12</th>
+                <td>{{ effectif.q12 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q13</th>
+                <td>{{ effectif.q13 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q14</th>
+                <td>{{ effectif.q14 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q15</th>
+                <td>{{ effectif.q15 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Q16</th>
+                <td>{{ effectif.q16 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Flag</th>
+                <td>{{ effectif.flag }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('effectif_index') }}">back to list</a>
+
+    <a href="{{ path('effectif_edit', {'id': effectif.id}) }}">edit</a>
+
+    {{ include('effectif/_delete_form.html.twig') }}
+{% endblock %}
