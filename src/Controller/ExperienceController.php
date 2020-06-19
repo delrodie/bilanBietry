@@ -26,7 +26,7 @@ class ExperienceController extends AbstractController
     private $experienceRepository;
     private $utility;
 
-    public function __construct(ActiviteRepository $activiteRepository,ExperienceRepository $experienceRepository, EntityManagerInterface $em, ImageRepository$imageRepository, EffectifRepository $effectifRepository, Utility $utility)
+    public function __construct(ActiviteRepository $activiteRepository,ExperienceRepository $experienceRepository, ImageRepository$imageRepository, EffectifRepository $effectifRepository, Utility $utility)
     {
         $this->activiteReposiroty = $activiteRepository;
         $this->imageRepository = $imageRepository;

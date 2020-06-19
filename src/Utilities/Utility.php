@@ -110,4 +110,11 @@ class Utility
             return $sessionUtilisateur;
         }
     }
+
+    public function clearSession()
+    {
+        $this->session->clear();
+
+        return true;
+    }
 }
