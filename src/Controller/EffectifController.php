@@ -44,6 +44,7 @@ class EffectifController extends AbstractController
      */
     public function new(Request $request, $activite): Response
     {
+
         $effectif = new Effectif();
         $form = $this->createForm(EffectifType::class, $effectif,['activite'=>$activite]);
         $form->handleRequest($request);

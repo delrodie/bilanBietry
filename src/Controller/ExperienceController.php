@@ -6,6 +6,7 @@ use App\Entity\Experience;
 use App\Form\ExperienceType;
 use App\Repository\ActiviteRepository;
 use App\Repository\ExperienceRepository;
+use App\Utilities\Utility;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,10 +18,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class ExperienceController extends AbstractController
 {
     private $activiteReposiroty;
+    private $utility;
 
-    public function __construct(ActiviteRepository $activiteRepository)
+    public function __construct(ActiviteRepository $activiteRepository, Utility $utility)
     {
         $this->activiteReposiroty = $activiteRepository;
+        $this->utility = $utility;
     }
 
     /**
@@ -38,6 +41,7 @@ class ExperienceController extends AbstractController
      */
     public function new(Request $request): Response
     {
+
         $experience = new Experience();
         $form = $this->createForm(ExperienceType::class, $experience);
         $form->handleRequest($request);
@@ -46,6 +50,9 @@ class ExperienceController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($experience);
             $entityManager->flush();
+
+            // Initialisation de la session
+            $this->utility->setSession($experience->getId());
 
             return $this->redirectToRoute('activite_new',['experience' => $experience->getId()]);
         }
