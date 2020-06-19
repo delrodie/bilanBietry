@@ -41,6 +41,8 @@ class ActiviteController extends AbstractController
      */
     public function new(Request $request, $experience): Response
     {
+        $this->utility->getSession();
+
         $activite = new Activite();
         $form = $this->createForm(ActiviteType::class, $activite,['experience'=>$experience]);
         $form->handleRequest($request);

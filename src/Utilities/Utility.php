@@ -11,6 +11,7 @@ use App\Repository\ImageRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
 
 class Utility
@@ -23,7 +24,7 @@ class Utility
     private $session;
     private $router;
 
-    public function __construct(ExperienceRepository $experienceRepository, EntityManagerInterface $em, ActiviteRepository $activiteRepository, ImageRepository$imageRepository, EffectifRepository $effectifRepository, SessionInterface $session, RouterInterface $router)
+    public function __construct(ExperienceRepository $experienceRepository, EntityManagerInterface $em, ActiviteRepository $activiteRepository, ImageRepository$imageRepository, EffectifRepository $effectifRepository, SessionInterface $session, UrlGeneratorInterface $router)
     {
         $this->experienceRepository = $experienceRepository;
         $this->em = $em;
@@ -92,7 +93,7 @@ class Utility
     /**
      * Recuperation dela session
      *
-     * @return RedirectResponse
+     * @return array
      */
     public function getSession()
     {
@@ -101,27 +102,12 @@ class Utility
 
         // Si aucune experience alors initialiser le remplissage du formulaire
         // sinon rediriger vers le formulaire adequat
+        $sessionUtilisateur = [];
         if (!$experience){
-            return new RedirectResponse($this->router->generate('experience_new'));
+            return null;
         }else{
-            $flag = $experience->getFlag();
-            if ($flag === 1){
-                return new RedirectResponse($this->router->generate('activite_new',['experience'=>$experience->getId()]));
-            }elseif($flag === 2){
-                $activite = $this->activiteRepository->findOneBy(['experience'=>$experience->getId()]);
-                return new RedirectResponse($this->router->generate('effectif_new',['activite'=>$activite->getId()]));
-            }elseif($flag === 3){
-                $activite = $this->activiteRepository->findOneBy(['experience'=>$experience->getId()]);
-                $effectif = $this->effectifRepository->findOneBy(['activite'=>$activite->getId()]);
-                return  new RedirectResponse($this->router->generate('image_new',['effectif'=>$effectif->getId()]));
-            }elseif($flag === 4){
-                $activite = $this->activiteRepository->findOneBy(['experience'=>$experience->getId()]);
-                $effectif = $this->effectifRepository->findOneBy(['activite'=>$activite->getId()]);
-                $image = $this->imageRepository->findOneBy(['effectif'=>$effectif->getId()]);
-                return new RedirectResponse($this->router->generate('fonctionnement_new',['image'=>$image->getId()]));
-            }else{
-                return new RedirectResponse($this->router->generate('app_accueil'));
-            }
+            $sessionUtilisateur= ['flag'=>$experience->getFlag(), 'id'=>$experience->getId()];
+            return $sessionUtilisateur;
         }
     }
 }

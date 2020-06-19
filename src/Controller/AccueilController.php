@@ -27,7 +27,7 @@ class AccueilController extends AbstractController
      */
     public function index()
     {
-        $this->utility->getSession();
+        //$this->utility->getSession();
         return $this->redirectToRoute('experience_new');
     }
 
@@ -37,9 +37,28 @@ class AccueilController extends AbstractController
     public function bilan()
     {
         //Verification de la session
-        $this->utility->getSession();
+        $encours = $this->utility->getSession();
+        if ($encours){
+            return $this->render("accueil/index.html.twig");
+        }else{
+            if ($encours['flag'] === 1){
+                $activite = $this->activiteReposiroty->findOneBy(['experience'=>$encours['id']]);
+                return $this->redirectToRoute('effectif_new',['activite'=>$activite->getId()]);
+            }elseif ($encours['flag'] === 2){
+                $activite = $this->activiteReposiroty->findOneBy(['experience'=>$encours['id']]);
+                $effectif = $this->effectifRepository->findOneBy(['activite'=>$activite->getId()]);
+                return $this->redirectToRoute('image_new',['effectif'=>$effectif->getId()]);
+            }elseif ($encours['flag'] === 3){
+                $activite = $this->activiteReposiroty->findOneBy(['experience'=>$encours['id']]);
+                $effectif = $this->effectifRepository->findOneBy(['activite'=>$activite->getId()]);
+                $image = $this->imageRepository->findOneBy(['effectif'=>$effectif->getId()]);
+                return $this->redirectToRoute('fonctionnement_new',['image'=>$image->getId()]);
+            }else{
+                return $this->redirectToRoute('bilan_fin');
+            }
+        }
         
-        return $this->render("accueil/index.html.twig");
+
     }
 
     /**
