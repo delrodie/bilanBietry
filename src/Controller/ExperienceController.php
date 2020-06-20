@@ -51,7 +51,7 @@ class ExperienceController extends AbstractController
     public function new(Request $request): Response
     {
         // Verification de session
-        $encours = $this->utility->getSession(); //dd($encours);
+        $encours = $this->utility->getSession(); //$this->utility->clearSession();
         if ($encours['flag']){
             if ($encours['flag'] === 1){
                 $activite = $this->activiteReposiroty->findOneBy(['experience'=>$encours['id']]);

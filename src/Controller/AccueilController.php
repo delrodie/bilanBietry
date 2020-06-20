@@ -50,10 +50,12 @@ class AccueilController extends AbstractController
     public function bilan() : Response
     {
         //Verification de la session
-        $encours = $this->utility->getSession();
+        $encours = $this->utility->getSession(); //dd($encours['id']);
         if (!$encours){
             return $this->redirectToRoute('experience_new');
         }
+
+        $this->gestMail->envoiMail($encours['id']);
 
         return $this->render('accueil/index.html.twig');
 
