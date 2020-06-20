@@ -1,0 +1,492 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent ()}} {% endblock %}
+
+{% block body %}
+    <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-md-11 col-lg-10 col-xl-9">
+                <div class="card card0 border-0">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card00 m-2 border-0">
+                                <div class="row text-center justify-content-center px-3">
+                                    <h3 class="mt-4" style="text-decoration:underline;">FORMULAIRE N°: {{ experience.id }}</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="d-flex justify-content-center mt-20">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-5">
+                                            <div class="tab-vertical">
+                                                <ul class="nav nav-tabs" id="myTab3" role="tablist">
+                                                    <li class="nav-item"> <a class="nav-link active" id="experience" data-toggle="tab" href="#experience-vertical" role="tab" aria-controls="experience" aria-selected="true">Experiences au sein du club</a> </li>
+                                                    <li class="nav-item"> <a class="nav-link" id="activite" data-toggle="tab" href="#activite-vertical" role="tab" aria-controls="activite" aria-selected="false">Actions et activités</a> </li>
+                                                    <li class="nav-item"> <a class="nav-link" id="effectif" data-toggle="tab" href="#effectif-vertical" role="tab" aria-controls="effectif" aria-selected="false">Effectif</a> </li>
+                                                    <li class="nav-item"> <a class="nav-link" id="image" data-toggle="tab" href="#image-vertical" role="tab" aria-controls="image" aria-selected="false">Image</a> </li>
+                                                    <li class="nav-item"> <a class="nav-link" id="fonctionnement" data-toggle="tab" href="#fonctionnement-vertical" role="tab" aria-controls="fonctionnement" aria-selected="false">Gestion et fonctionnment</a> </li>
+                                                </ul>
+                                                <div class="tab-content" id="myTabContent3">
+                                                    <div class="tab-pane fade show active" id="experience-vertical" role="tabpanel" aria-labelledby="experience">
+                                                        {% set totExperience = 0 %}
+                                                        {% set totExperience = totExperience + experience.q1 +
+                                                            experience.q2 + experience.q3 + experience.q4 +
+                                                            experience.q5 + experience.q6 + experience.q6 +
+                                                            experience.q7 + experience.q8 + experience.q9 +
+                                                            experience.q10 + experience.q11 + experience.q12 + experience.q13
+                                                        %}
+                                                        <h3>Expérience au sein du club (<span style="font-weight: bold; color: darkblue">{{ totExperience }}/13</span>)</h3>
+                                                        <div class="row px-3 mt-5 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q1 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q1'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q2 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q2'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q3 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q3'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q4 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q4'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q5 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q5'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q6 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q6'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q7 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q7'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q8 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q8'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q9 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q9'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q10 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q10'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q11 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q11'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q12 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q12'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if experience.q13 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'experience.q13'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="activite-vertical" role="tabpanel" aria-labelledby="activite">
+                                                        {% set totActivite = 0 %}
+                                                        {% set totActivite = totActivite + activite.q1 + activite.q2 +
+                                                            activite.q3 + activite.q4 + activite.q5 + activite.q6 +
+                                                            activite.q7 + activite.q8 + activite.q9 + activite.q10 +
+                                                            activite.q11
+                                                        %}
+                                                        <h3>Activités (<span style="font-weight:bold; color: darkblue">{{ totActivite }}/11</span>)</h3>
+                                                        <div class="row px-3 mt-5 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if activite.q1 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'activite.q1'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if activite.q2 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'activite.q2'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if activite.q3 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'activite.q3'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if activite.q4 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'activite.q4'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if activite.q5 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'activite.q5'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if activite.q6 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'activite.q6'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if activite.q7 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'activite.q7'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if activite.q8 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'activite.q8'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if activite.q9 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'activite.q9'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if activite.q10 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'activite.q10'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if activite.q11 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'activite.q11'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="effectif-vertical" role="tabpanel" aria-labelledby="effectif">
+                                                        {% set totEffectif = 0 %}
+                                                        {% set totEffectif = totEffectif + effectif.q1 + effectif.q2 + effectif.q3 + effectif.q4 +
+                                                            effectif.q5 + effectif.q6 + effectif.q7 + effectif.q8 + effectif.q9 + effectif.q10 +
+                                                            effectif.q11 + effectif.q12 + effectif.q13 + effectif.q14 + effectif.q15 + effectif.q16
+                                                        %}
+                                                        <h3>Effectif (<span style="font-weight:bold; color: darkblue">{{ totEffectif }}/16</span>)</h3>
+                                                        <div class="row px-3 mt-5 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q1 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q1'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q2 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q2'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q3 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q3'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q4 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q4'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q5 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q5'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q6 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q6'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q7 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q7'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q8 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q8'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q9 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q9'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q10 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q10'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q11 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q11'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q12 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q12'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q13 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q13'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q14 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q14'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q15 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q15'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q16 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'effectif.q16'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="image-vertical" role="tabpanel" aria-labelledby="image">
+                                                        {% set totImage = 0 %}
+                                                        {% set totImage = totImage + image.q1 + image.q2 + image.q3 + image.q4 + image.q5 +
+                                                            image.q6 + image.q7 + image.q8 + image.q9 + image.q10 + image.q11 + image.q12
+                                                        %}
+                                                        <h3>Image (<span style="font-weight:bold; color: darkblue">{{ totImage }}/12</span>)</h3>
+                                                        <div class="row px-3 mt-5 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if image.q1 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'image.q1'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if image.q2 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'image.q2'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if image.q3 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'image.q3'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if image.q4 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'image.q4'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if image.q5 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'image.q5'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if image.q6 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'image.q6'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if image.q7 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'image.q7'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if image.q8 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'image.q8'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if image.q9 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'image.q9'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if image.q10 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'image.q10'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if image.q11 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'image.q11'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if image.q12 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'image.q12'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="fonctionnement-vertical" role="tabpanel" aria-labelledby="fonctionnement">
+                                                        {% set totFonctionnement = 0 %}
+                                                        {% set totFonctionnement = totFonctionnement + fonctionnement.q1 +
+                                                            fonctionnement.q2 + fonctionnement.q3 + fonctionnement.q4 +
+                                                            fonctionnement.q5 + fonctionnement.q6 + fonctionnement.q7 +
+                                                            fonctionnement.q8 + fonctionnement.q9 + fonctionnement.q10 +
+                                                            fonctionnement.q11 + fonctionnement.q12 + fonctionnement.q13 +
+                                                            fonctionnement.q14
+                                                        %}
+                                                        <h3>Gestion etfonctionnement (<span style="font-weight:bold; color: darkblue">{{ totFonctionnement }}/14</span>)</h3>
+                                                        <div class="row px-3 mt-5 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q1 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q1'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q2 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q2'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q3 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q3'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q3 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q3'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q4 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q4'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q5 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q5'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q6 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q6'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q7 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q7'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q8 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q8'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q9 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q9'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q10 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q10'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q11 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q11'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q12 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q12'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q13 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q13'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-3 mt-3 mb-0">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q14 %}checked{% endif %}>
+                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q14'|trans }}</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+
+{% endblock %}

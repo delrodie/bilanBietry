@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}Rotary ABidjan Bietry :: Bilan de santé{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ absolute_url(asset('assets/images/favicon.ico')) }}">
+        <meta name="keywords" content="rotary, bietry, abidjan"  />
+        <meta name="description" content="Je viens de participer au bilan du club, je t'invite à en faire autant." />
+
+        <link rel="canonical" href="{{ absolute_url(path('app_accueil')) }}" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:type" content="Item" />
+        <meta property="og:title" content="Rotary ABidjan Bietry :: Bilan de santé" />
+        <meta property="og:description" content="Je viens de participer au bilan du club, je t'invite à en faire autant." />
+        <meta property="og:url" content="{{ absolute_url(path('app_accueil')) }}" />
+        <meta property="og:site_name" content="ROTARY BIETRY" />
+        <meta property="og:image" content="{{ absolute_url(asset('assets/images/logo-opportunite2-01.png')) }}" />
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ absolute_url(asset('assets/css/style.css')) }}">
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 offset-md-4 col-sm-12 text-center">
+                        <img src="{{ absolute_url(asset('assets/images/logo-opportunite2-01.png')) }}" alt="Logo Rotary Abidjan Bietry" class="img-fluid logo">
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5eebddca32ef500012dcd417&product=inline-share-buttons&cms=sop' async='async'></script>
+        {% endblock %}
+    </body>
+</html>
