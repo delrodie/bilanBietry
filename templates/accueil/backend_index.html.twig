@@ -11,12 +11,12 @@
                         <div class="col-12">
                             <div class="card card00 m-2 border-0">
                                 <div class="row text-center justify-content-center px-3">
-                                    <h3 class="mt-4" style="text-decoration:underline;">FORMULAIRE N°: {{ experience.id }}</h3>
+                                    <h3 class="mt-4" style="text-decoration:underline;">RECAPITULATIF DES REPONSES</h3>
                                 </div>
                                 <div class="row">
                                     <div class="d-flex justify-content-center mt-20">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-5">
-                                            <div class="tab-vertical">
+                                            <div class="tab-vertical" style="width: 100%;">
                                                 <ul class="nav nav-tabs" id="myTab3" role="tablist">
                                                     <li class="nav-item"> <a class="nav-link active" id="experience" data-toggle="tab" href="#experience-vertical" role="tab" aria-controls="experience" aria-selected="true">Experiences au sein du club</a> </li>
                                                     <li class="nav-item"> <a class="nav-link" id="activite" data-toggle="tab" href="#activite-vertical" role="tab" aria-controls="activite" aria-selected="false">Actions et activités</a> </li>
@@ -26,451 +26,198 @@
                                                 </ul>
                                                 <div class="tab-content" id="myTabContent3">
                                                     <div class="tab-pane fade show active" id="experience-vertical" role="tabpanel" aria-labelledby="experience">
-                                                        {% set totExperience = 0 %}
-                                                        {% set totExperience = totExperience + experience.q1 +
-                                                            experience.q2 + experience.q3 + experience.q4 +
-                                                            experience.q5 + experience.q6 + experience.q6 +
-                                                            experience.q7 + experience.q8 + experience.q9 +
-                                                            experience.q10 + experience.q11 + experience.q12 + experience.q13
-                                                        %}
-                                                        <h3>Expérience au sein du club (<span style="font-weight: bold; color: darkblue">{{ totExperience }}/13</span>)</h3>
-                                                        <div class="row px-3 mt-5 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q1 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q1'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q2 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q2'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q3 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q3'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q4 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q4'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q5 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q5'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q6 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q6'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q7 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q7'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q8 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q8'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q9 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q9'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q10 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q10'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q11 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q11'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q12 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q12'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if experience.q13 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'experience.q13'|trans }}</label>
-                                                            </div>
-                                                        </div>
+
+                                                        <h3 class="mb-5">Expérience au sein du club </h3>
+                                                        <table class="table table-striped table-bordered mt-5" id="rotary" style="width: 100%;">
+                                                            <thead>
+                                                                <tr>
+                                                                    <td class="text-center">DESCRIPTION</td>
+                                                                    <td class="text-center">NOMBRE (/{{ experiences|length }})</td>
+                                                                    <td class="text-center">%</td>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            {% set q1=0 %}{% set q2=0 %}{% set q3=0 %}{% set q4=0 %}{% set q5=0 %}{% set q6=0 %}{% set q7=0 %}
+                                                            {% set q8=0 %}{% set q9=0 %}{% set q10=0 %}{% set q11=0 %}{% set q12=0 %}{% set q13=0 %}
+                                                            {% set pourcentage = 100/experiences|length %}
+                                                            {% for experience in experiences %}
+                                                                {% set q1 = q1 + experience.q1 %}{% set q2 = q2 + experience.q2 %}{% set q3 = q3 + experience.q3 %}
+                                                                {% set q4 = q4 + experience.q4 %}{% set q5 = q5 + experience.q5 %}{% set q6 = q6 + experience.q6 %}
+                                                                {% set q7 = q7 + experience.q7 %}{% set q8 = q8 + experience.q8 %}{% set q9 = q9 + experience.q9 %}
+                                                                {% set q10 = q10 + experience.q10 %}{% set q11 = q11 + experience.q11 %}{% set q12 = q12 + experience.q12 %}
+                                                                {% set q13 = q13 + experience.q13 %}
+                                                            {% endfor %}
+                                                            <tr><td>{{ 'experience.q1'|trans }}</td><td class="text-center">{{ q1 }}</td><td class="text-center">{{ q1* pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'experience.q2'|trans }}</td><td class="text-center">{{ q2 }}</td><td class="text-center">{{ q2 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'experience.q3'|trans }}</td><td class="text-center">{{ q3 }}</td><td class="text-center">{{ q3 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'experience.q4'|trans }}</td><td class="text-center">{{ q4 }}</td><td class="text-center">{{ q4 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'experience.q5'|trans }}</td><td class="text-center">{{ q5 }}</td><td class="text-center">{{ q5 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'experience.q6'|trans }}</td><td class="text-center">{{ q6 }}</td><td class="text-center">{{ q6 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'experience.q7'|trans }}</td><td class="text-center">{{ q7 }}</td><td class="text-center">{{ q7 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'experience.q8'|trans }}</td><td class="text-center">{{ q8 }}</td><td class="text-center">{{ q8 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'experience.q9'|trans }}</td><td class="text-center">{{ q9 }}</td><td class="text-center">{{ q9 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'experience.q10'|trans }}</td><td class="text-center">{{ q10 }}</td><td class="text-center">{{ q10 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'experience.q11'|trans }}</td><td class="text-center">{{ q11 }}</td><td class="text-center">{{ q11 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'experience.q12'|trans }}</td><td class="text-center">{{ q12 }}</td><td class="text-center">{{ q12 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'experience.q13'|trans }}</td><td class="text-center">{{ q13 }}</td><td class="text-center">{{ q13 * pourcentage|round(1) }} </td></tr>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
                                                     <div class="tab-pane fade" id="activite-vertical" role="tabpanel" aria-labelledby="activite">
-                                                        {% set totActivite = 0 %}
-                                                        {% set totActivite = totActivite + activite.q1 + activite.q2 +
-                                                            activite.q3 + activite.q4 + activite.q5 + activite.q6 +
-                                                            activite.q7 + activite.q8 + activite.q9 + activite.q10 +
-                                                            activite.q11
-                                                        %}
-                                                        <h3>Activités (<span style="font-weight:bold; color: darkblue">{{ totActivite }}/11</span>)</h3>
-                                                        <div class="row px-3 mt-5 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if activite.q1 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'activite.q1'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if activite.q2 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'activite.q2'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if activite.q3 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'activite.q3'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if activite.q4 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'activite.q4'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if activite.q5 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'activite.q5'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if activite.q6 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'activite.q6'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if activite.q7 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'activite.q7'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if activite.q8 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'activite.q8'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if activite.q9 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'activite.q9'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if activite.q10 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'activite.q10'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if activite.q11 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'activite.q11'|trans }}</label>
-                                                            </div>
-                                                        </div>
+
+                                                        <h3 class="mb-5">Activités </h3>
+                                                        <table class="table table-striped table-bordered mt-5" id="rotary_activite" style="width: 100%;">
+                                                            <thead>
+                                                            <tr>
+                                                                <td class="text-center">DESCRIPTION</td>
+                                                                <td class="text-center">NOMBRE (/{{ activites|length }})</td>
+                                                                <td class="text-center">%</td>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            {% set q1=0 %}{% set q2=0 %}{% set q3=0 %}{% set q4=0 %}{% set q5=0 %}{% set q6=0 %}{% set q7=0 %}
+                                                            {% set q8=0 %}{% set q9=0 %}{% set q10=0 %}{% set q11=0 %}{% set q12=0 %}{% set q13=0 %}
+                                                            {% set pourcentage = 100/activites|length %}
+                                                            {% for activite in activites %}
+                                                                {% set q1 = q1 + activite.q1 %}{% set q2 = q2 + activite.q2 %}{% set q3 = q3 + activite.q3 %}
+                                                                {% set q4 = q4 + activite.q4 %}{% set q5 = q5 + activite.q5 %}{% set q6 = q6 + activite.q6 %}
+                                                                {% set q7 = q7 + activite.q7 %}{% set q8 = q8 + activite.q8 %}{% set q9 = q9 + activite.q9 %}
+                                                                {% set q10 = q10 + activite.q10 %}{% set q11 = q11 + activite.q11 %}
+
+                                                            {% endfor %}
+                                                            <tr><td>{{ 'activite.q1'|trans }}</td><td class="text-center">{{ q1 }}</td><td class="text-center">{{ q1* pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'activite.q2'|trans }}</td><td class="text-center">{{ q2 }}</td><td class="text-center">{{ q2 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'activite.q3'|trans }}</td><td class="text-center">{{ q3 }}</td><td class="text-center">{{ q3 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'activite.q4'|trans }}</td><td class="text-center">{{ q4 }}</td><td class="text-center">{{ q4 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'activite.q5'|trans }}</td><td class="text-center">{{ q5 }}</td><td class="text-center">{{ q5 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'activite.q6'|trans }}</td><td class="text-center">{{ q6 }}</td><td class="text-center">{{ q6 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'activite.q7'|trans }}</td><td class="text-center">{{ q7 }}</td><td class="text-center">{{ q7 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'activite.q8'|trans }}</td><td class="text-center">{{ q8 }}</td><td class="text-center">{{ q8 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'activite.q9'|trans }}</td><td class="text-center">{{ q9 }}</td><td class="text-center">{{ q9 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'activite.q10'|trans }}</td><td class="text-center">{{ q10 }}</td><td class="text-center">{{ q10 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'activite.q11'|trans }}</td><td class="text-center">{{ q11 }}</td><td class="text-center">{{ q11 * pourcentage|round(1) }} </td></tr>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
                                                     <div class="tab-pane fade" id="effectif-vertical" role="tabpanel" aria-labelledby="effectif">
-                                                        {% set totEffectif = 0 %}
-                                                        {% set totEffectif = totEffectif + effectif.q1 + effectif.q2 + effectif.q3 + effectif.q4 +
-                                                            effectif.q5 + effectif.q6 + effectif.q7 + effectif.q8 + effectif.q9 + effectif.q10 +
-                                                            effectif.q11 + effectif.q12 + effectif.q13 + effectif.q14 + effectif.q15 + effectif.q16
-                                                        %}
-                                                        <h3>Effectif (<span style="font-weight:bold; color: darkblue">{{ totEffectif }}/16</span>)</h3>
-                                                        <div class="row px-3 mt-5 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q1 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q1'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q2 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q2'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q3 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q3'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q4 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q4'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q5 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q5'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q6 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q6'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q7 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q7'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q8 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q8'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q9 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q9'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q10 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q10'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q11 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q11'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q12 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q12'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q13 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q13'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q14 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q14'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q15 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q15'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if effectif.q16 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'effectif.q16'|trans }}</label>
-                                                            </div>
-                                                        </div>
+
+                                                        <h3 class="mb-5">Effectif </h3>
+                                                        <table class="table table-striped table-bordered mt-5" id="rotary_effectif" style="width: 100%;">
+                                                            <thead>
+                                                            <tr>
+                                                                <td class="text-center">DESCRIPTION</td>
+                                                                <td class="text-center">NOMBRE (/{{ effectifs|length }})</td>
+                                                                <td class="text-center">%</td>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            {% set q1=0 %}{% set q2=0 %}{% set q3=0 %}{% set q4=0 %}{% set q5=0 %}{% set q6=0 %}{% set q7=0 %}
+                                                            {% set q8=0 %}{% set q9=0 %}{% set q10=0 %}{% set q11=0 %}{% set q12=0 %}{% set q13=0 %}{% set q14=0 %}
+                                                            {% set q15=0 %}{% set q16=0 %}
+                                                            {% set pourcentage = 100/effectifs|length %}
+                                                            {% for effectif in effectifs %}
+                                                                {% set q1 = q1 + effectif.q1 %}{% set q2 = q2 + effectif.q2 %}{% set q3 = q3 + effectif.q3 %}
+                                                                {% set q4 = q4 + effectif.q4 %}{% set q5 = q5 + effectif.q5 %}{% set q6 = q6 + effectif.q6 %}
+                                                                {% set q7 = q7 + effectif.q7 %}{% set q8 = q8 + effectif.q8 %}{% set q9 = q9 + effectif.q9 %}
+                                                                {% set q10 = q10 + effectif.q10 %}{% set q11 = q11 + effectif.q11 %}{% set q12 = q12 + effectif.q12 %}
+                                                                {% set q13 = q13 + effectif.q13 %}{% set q14 = q14 + effectif.q14 %}{% set q15 = q15 + effectif.q15 %}
+                                                                {% set q16 = q16 + effectif.q16 %}
+                                                            {% endfor %}
+                                                            <tr><td>{{ 'effectif.q1'|trans }}</td><td class="text-center">{{ q1 }}</td><td class="text-center">{{ q1* pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q2'|trans }}</td><td class="text-center">{{ q2 }}</td><td class="text-center">{{ q2 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q3'|trans }}</td><td class="text-center">{{ q3 }}</td><td class="text-center">{{ q3 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q4'|trans }}</td><td class="text-center">{{ q4 }}</td><td class="text-center">{{ q4 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q5'|trans }}</td><td class="text-center">{{ q5 }}</td><td class="text-center">{{ q5 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q6'|trans }}</td><td class="text-center">{{ q6 }}</td><td class="text-center">{{ q6 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q7'|trans }}</td><td class="text-center">{{ q7 }}</td><td class="text-center">{{ q7 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q8'|trans }}</td><td class="text-center">{{ q8 }}</td><td class="text-center">{{ q8 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q9'|trans }}</td><td class="text-center">{{ q9 }}</td><td class="text-center">{{ q9 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q10'|trans }}</td><td class="text-center">{{ q10 }}</td><td class="text-center">{{ q10 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q11'|trans }}</td><td class="text-center">{{ q11 }}</td><td class="text-center">{{ q11 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q12'|trans }}</td><td class="text-center">{{ q12 }}</td><td class="text-center">{{ q12 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q13'|trans }}</td><td class="text-center">{{ q13 }}</td><td class="text-center">{{ q13 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q14'|trans }}</td><td class="text-center">{{ q14 }}</td><td class="text-center">{{ q14 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q15'|trans }}</td><td class="text-center">{{ q15 }}</td><td class="text-center">{{ q15 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'effectif.q16'|trans }}</td><td class="text-center">{{ q16 }}</td><td class="text-center">{{ q16 * pourcentage|round(1) }} </td></tr>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
                                                     <div class="tab-pane fade" id="image-vertical" role="tabpanel" aria-labelledby="image">
-                                                        {% set totImage = 0 %}
-                                                        {% set totImage = totImage + image.q1 + image.q2 + image.q3 + image.q4 + image.q5 +
-                                                            image.q6 + image.q7 + image.q8 + image.q9 + image.q10 + image.q11 + image.q12
-                                                        %}
-                                                        <h3>Image (<span style="font-weight:bold; color: darkblue">{{ totImage }}/12</span>)</h3>
-                                                        <div class="row px-3 mt-5 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if image.q1 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'image.q1'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if image.q2 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'image.q2'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if image.q3 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'image.q3'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if image.q4 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'image.q4'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if image.q5 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'image.q5'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if image.q6 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'image.q6'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if image.q7 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'image.q7'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if image.q8 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'image.q8'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if image.q9 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'image.q9'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if image.q10 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'image.q10'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if image.q11 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'image.q11'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if image.q12 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'image.q12'|trans }}</label>
-                                                            </div>
-                                                        </div>
+
+                                                        <h3 class="mb-5">Image</h3>
+                                                        <table class="table table-striped table-bordered mt-5" id="rotary_image" style="width: 100%;">
+                                                            <thead>
+                                                            <tr>
+                                                                <td class="text-center">DESCRIPTION</td>
+                                                                <td class="text-center">NOMBRE (/{{ images|length }})</td>
+                                                                <td class="text-center">%</td>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            {% set q1=0 %}{% set q2=0 %}{% set q3=0 %}{% set q4=0 %}{% set q5=0 %}{% set q6=0 %}{% set q7=0 %}
+                                                            {% set q8=0 %}{% set q9=0 %}{% set q10=0 %}{% set q11=0 %}{% set q12=0 %}{% set q13=0 %}
+                                                            {% set pourcentage = 100/images|length %}
+                                                            {% for image in images %}
+                                                                {% set q1 = q1 + image.q1 %}{% set q2 = q2 + image.q2 %}{% set q3 = q3 + image.q3 %}
+                                                                {% set q4 = q4 + image.q4 %}{% set q5 = q5 + image.q5 %}{% set q6 = q6 + image.q6 %}
+                                                                {% set q7 = q7 + image.q7 %}{% set q8 = q8 + image.q8 %}{% set q9 = q9 + image.q9 %}
+                                                                {% set q10 = q10 + image.q10 %}{% set q11 = q11 + image.q11 %}{% set q12 = q12 + image.q12 %}
+
+                                                            {% endfor %}
+                                                            <tr><td>{{ 'image.q1'|trans }}</td><td class="text-center">{{ q1 }}</td><td class="text-center">{{ q1* pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'image.q2'|trans }}</td><td class="text-center">{{ q2 }}</td><td class="text-center">{{ q2 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'image.q3'|trans }}</td><td class="text-center">{{ q3 }}</td><td class="text-center">{{ q3 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'image.q4'|trans }}</td><td class="text-center">{{ q4 }}</td><td class="text-center">{{ q4 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'image.q5'|trans }}</td><td class="text-center">{{ q5 }}</td><td class="text-center">{{ q5 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'image.q6'|trans }}</td><td class="text-center">{{ q6 }}</td><td class="text-center">{{ q6 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'image.q7'|trans }}</td><td class="text-center">{{ q7 }}</td><td class="text-center">{{ q7 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'image.q8'|trans }}</td><td class="text-center">{{ q8 }}</td><td class="text-center">{{ q8 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'image.q9'|trans }}</td><td class="text-center">{{ q9 }}</td><td class="text-center">{{ q9 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'image.q10'|trans }}</td><td class="text-center">{{ q10 }}</td><td class="text-center">{{ q10 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'image.q11'|trans }}</td><td class="text-center">{{ q11 }}</td><td class="text-center">{{ q11 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'image.q12'|trans }}</td><td class="text-center">{{ q12 }}</td><td class="text-center">{{ q12 * pourcentage|round(1) }} </td></tr>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
                                                     <div class="tab-pane fade" id="fonctionnement-vertical" role="tabpanel" aria-labelledby="fonctionnement">
-                                                        {% set totFonctionnement = 0 %}
-                                                        {% set totFonctionnement = totFonctionnement + fonctionnement.q1 +
-                                                            fonctionnement.q2 + fonctionnement.q3 + fonctionnement.q4 +
-                                                            fonctionnement.q5 + fonctionnement.q6 + fonctionnement.q7 +
-                                                            fonctionnement.q8 + fonctionnement.q9 + fonctionnement.q10 +
-                                                            fonctionnement.q11 + fonctionnement.q12 + fonctionnement.q13 +
-                                                            fonctionnement.q14
-                                                        %}
-                                                        <h3>Gestion etfonctionnement (<span style="font-weight:bold; color: darkblue">{{ totFonctionnement }}/14</span>)</h3>
-                                                        <div class="row px-3 mt-5 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q1 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q1'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q2 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q2'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q3 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q3'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q3 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q3'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q4 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q4'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q5 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q5'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q6 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q6'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q7 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q7'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q8 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q8'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q9 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q9'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q10 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q10'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q11 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q11'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q12 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q12'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q13 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q13'|trans }}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row px-3 mt-3 mb-0">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" {% if fonctionnement.q14 %}checked{% endif %}>
-                                                                <label for="" class="custom-control-label">{{ 'fonctionnement.q14'|trans }}</label>
-                                                            </div>
-                                                        </div>
+
+                                                        <h3 class="mb-5">Gestion etfonctionnement </h3>
+
+                                                        <table class="table table-striped table-bordered mt-5" id="rotary_fonctionnement" style="width: 100%;">
+                                                            <thead>
+                                                            <tr>
+                                                                <td class="text-center">DESCRIPTION</td>
+                                                                <td class="text-center">NOMBRE (/{{ fonctionnements|length }})</td>
+                                                                <td class="text-center">%</td>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            {% set q1=0 %}{% set q2=0 %}{% set q3=0 %}{% set q4=0 %}{% set q5=0 %}{% set q6=0 %}{% set q7=0 %}
+                                                            {% set q8=0 %}{% set q9=0 %}{% set q10=0 %}{% set q11=0 %}{% set q12=0 %}{% set q13=0 %}{% set q14=0 %}
+                                                            {% set pourcentage = 100/fonctionnements|length %}
+                                                            {% for fonctionnement in fonctionnements %}
+                                                                {% set q1 = q1 + fonctionnement.q1 %}{% set q2 = q2 + fonctionnement.q2 %}{% set q3 = q3 + fonctionnement.q3 %}
+                                                                {% set q4 = q4 + fonctionnement.q4 %}{% set q5 = q5 + fonctionnement.q5 %}{% set q6 = q6 + fonctionnement.q6 %}
+                                                                {% set q7 = q7 + fonctionnement.q7 %}{% set q8 = q8 + fonctionnement.q8 %}{% set q9 = q9 + fonctionnement.q9 %}
+                                                                {% set q10 = q10 + fonctionnement.q10 %}{% set q11 = q11 + fonctionnement.q11 %}{% set q12 = q12 + fonctionnement.q12 %}
+                                                                {% set q13 = q13 + fonctionnement.q13 %}{% set q14 = q14 + fonctionnement.q14 %}
+                                                            {% endfor %}
+                                                            <tr><td>{{ 'fonctionnement.q1'|trans }}</td><td class="text-center">{{ q1 }}</td><td class="text-center">{{ q1* pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q2'|trans }}</td><td class="text-center">{{ q2 }}</td><td class="text-center">{{ q2 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q3'|trans }}</td><td class="text-center">{{ q3 }}</td><td class="text-center">{{ q3 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q4'|trans }}</td><td class="text-center">{{ q4 }}</td><td class="text-center">{{ q4 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q5'|trans }}</td><td class="text-center">{{ q5 }}</td><td class="text-center">{{ q5 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q6'|trans }}</td><td class="text-center">{{ q6 }}</td><td class="text-center">{{ q6 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q7'|trans }}</td><td class="text-center">{{ q7 }}</td><td class="text-center">{{ q7 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q8'|trans }}</td><td class="text-center">{{ q8 }}</td><td class="text-center">{{ q8 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q9'|trans }}</td><td class="text-center">{{ q9 }}</td><td class="text-center">{{ q9 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q10'|trans }}</td><td class="text-center">{{ q10 }}</td><td class="text-center">{{ q10 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q11'|trans }}</td><td class="text-center">{{ q11 }}</td><td class="text-center">{{ q11 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q12'|trans }}</td><td class="text-center">{{ q12 }}</td><td class="text-center">{{ q12 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q13'|trans }}</td><td class="text-center">{{ q13 }}</td><td class="text-center">{{ q13 * pourcentage|round(1) }} </td></tr>
+                                                            <tr><td>{{ 'fonctionnement.q14'|trans }}</td><td class="text-center">{{ q14 }}</td><td class="text-center">{{ q15 * pourcentage|round(1) }} </td></tr>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
                                                 </div>
                                             </div>
@@ -486,7 +233,70 @@
         </div>
     </div>
 {% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.bootstrap4.min.css">
+{% endblock %}
 {% block javascripts %}
     {{ parent() }}
-
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.colVis.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#rotary').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
+            } );
+            $('#rotary_activite').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
+            } );
+            $('#rotary_effectif').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
+            } );
+            $('#rotary_image').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
+            } );
+            $('#rotary_fonctionnement').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
+            } );
+        } );
+    </script>
 {% endblock %}

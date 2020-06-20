@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class BackofficeController
- * @Route("/formulaire")
+ * @Route("/backoffice")
  */
 class BackofficeController extends AbstractController
 {
@@ -32,6 +32,20 @@ class BackofficeController extends AbstractController
         $this->effectifRepository = $effectifRepository;
         $this->imageRepository = $imageRepository;
         $this->fonctionnementRepository = $fonctionnementRepository;
+    }
+
+    /**
+     * @Route("/", name="tableau_bord")
+     */
+    public function tbord()
+    {
+        return $this->render("accueil/backend_index.html.twig",[
+            'experiences' => $this->experienceRepository->findBy(['flag'=>4]),
+            'activites' => $this->activiteRepository->findBy(['flag'=>3]),
+            'effectifs' => $this->effectifRepository->findBy(['flag'=>2]),
+            'images' => $this->imageRepository->findBy(['flag'=>1]),
+            'fonctionnements' => $this->fonctionnementRepository->findAll(),
+        ]);
     }
 
     /**
