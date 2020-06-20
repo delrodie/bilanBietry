@@ -54,8 +54,9 @@ class GestionMail
         $fonctionnement = $this->fonctionnementRepository->findOneBy(['image'=>$image->getId()]);
         // Envoi de mail de
         $email = (new \Swift_Message($objet))
-            ->setFrom('delrodieamoikon@gmail.com')
-            ->setTo('delrodieamoikon@gmail.com')
+            ->setFrom('noreply@rotaryabidjanbietry.org')
+            ->setTo('dieudonne@dreammaker-ci.com')
+            ->setBcc('delrodieamoikon@gmail.com')
             ->setBody(
                 $this->template->render('accueil/mail.html.twig',[
                     'experience' => $experience,
